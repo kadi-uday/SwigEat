@@ -1,0 +1,32 @@
+{
+  "name": "swigeat-app",
+  "version": "1.0.0",
+  "description": "SwigEat is a food ordering app developed with React js",
+  "homepage": "https://github.com/kadi-uday/SwigEat#readme",
+  "bugs": {
+    "url": "https://github.com/kadi-uday/SwigEat/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kadi-uday/SwigEat.git"
+  },
+  "license": "ISC",
+  "author": "Kadi Uday",
+  "type": "commonjs",
+  "scripts": {
+    "start": " parcel index.html",
+    "build": " parcel build index.html",
+    "test": "jest"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "browserslist": [
+    "last 2 versions"
+  ],
+  "devDependencies": {
+    "@babel/preset-react": "^7.26.3",
+    "parcel": "^2.13.3"
+  }
+}
