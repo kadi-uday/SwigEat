@@ -1,0 +1,1 @@
+export const CARD_IMG_URL = "https://b.zmtcdn.com/data/pictures/5/93455/17944045f4536262a7d7f6efbe285822_o2_featured_v2.jpg";
