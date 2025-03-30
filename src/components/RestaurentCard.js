@@ -1,4 +1,4 @@
-import { CARD_IMG_URL } from "../utils/const";
+import { CND_URL } from "../utils/const";
 
 
 const RestaurentCard = (props) => {
@@ -10,9 +10,7 @@ const RestaurentCard = (props) => {
        
        <div className="res-card">
              <div className="card-img"> 
-                <img id="act-img" src = {
-                  "https://media-assets.swiggy.com/swiggy/image/upload/"
-                  + cloudinaryImageId} alt="card image"></img>
+                <img id="act-img" src = { CND_URL + cloudinaryImageId } alt="card image"></img>
              </div>
           <div className="res-info">  
           <h3>{name}</h3>
