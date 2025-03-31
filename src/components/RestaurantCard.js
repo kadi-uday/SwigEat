@@ -1,7 +1,7 @@
 import { CND_URL } from "../utils/const";
 
 
-const RestaurentCard = (props) => {
+const RestaurantCard = (props) => {
    
    const {resData} = props;
    const {cloudinaryImageId,name,cuisines,avgRating,costForTwo,sla} = resData?.info;
@@ -24,4 +24,4 @@ const RestaurentCard = (props) => {
     )
  }
 
- export default RestaurentCard;
+ export default RestaurantCard;
