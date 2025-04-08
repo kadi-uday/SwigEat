@@ -1,4 +1,4 @@
-import { CND_URL } from "../utils/const";
+import { CDN_URL } from "../utils/const";
 
 
 const RestaurantCard = (props) => {
@@ -10,14 +10,14 @@ const RestaurantCard = (props) => {
        
        <div className="res-card">
              <div className="card-img"> 
-                <img id="act-img" src = { CND_URL + cloudinaryImageId } alt="card image"></img>
+                <img id="act-img" src = { CDN_URL + cloudinaryImageId } alt="card image"></img>
              </div>
           <div className="res-info">  
           <h3>{name}</h3>
           <h4>{cuisines.join(", ")}</h4>
           <h4>{avgRating} stars</h4>
           <h4>{costForTwo} </h4>
-          <h4>{ sla?.deliveryTime} min</h4>
+          <h4>{ sla?.slaString} </h4>
           </div>
        </div>
  

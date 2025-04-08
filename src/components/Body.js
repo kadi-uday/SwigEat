@@ -1,12 +1,14 @@
 import RestaurantCard from "./RestaurantCard";
 import { useState , useEffect } from "react";
 import Shimmer from "./Shimmer";
+import WhatsOnYourMind from "./WhatsOnYourMind";
 
 const Body = () => {
 
    const [listOfRestaurants , setListOfRestaurants] = useState([]);
    const [filteredRestaurants , setFilteredRestaurants] = useState([]);
    const [searchQuery, setSearchQuery] = useState("");
+   const [mindData , setMindData] = useState([]);
 
    function handleSearch() {
      const filteredRes = listOfRestaurants.filter((res) =>
@@ -27,6 +29,7 @@ const Body = () => {
       console.log(json);
       setListOfRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
       setFilteredRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+      setMindData(json?.data?.cards[0]?.card.card.imageGridCards?.info);   
    }
    
    if(listOfRestaurants.length === 0){
@@ -55,6 +58,18 @@ const Body = () => {
                }}></input>
                <button onClick={handleSearch}>Search</button>
             </div>
+         </div>
+         
+         <div className="mind-heading">
+            <h2>What's on your mind?</h2>
+         </div>
+         <div className="mind-container">
+            {mindData.slice(0,7).map((item) => (
+               <WhatsOnYourMind key={item.id} itemData = {item} />
+            ) )}
+         </div>
+         <div className="res-heading">
+            <h2>Restaurants with online food delivery </h2>
          </div>
           
           <div className="res-container">
