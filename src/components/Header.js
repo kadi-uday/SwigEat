@@ -8,7 +8,7 @@ const [btnName , setBtnName] = useState("Login");
    return (
       <div className="header">
          
-         <img id="img-logo" src = {SwigEatlogo} alt="logo"></img>
+         <img id="img-logo" src = {SwigEatlogo} alt="logo"></img> 
 
          <div className="nav-container">
                <ul id="list-container">

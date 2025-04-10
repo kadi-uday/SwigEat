@@ -12,21 +12,24 @@
   },
   "license": "ISC",
   "author": "Kadi Uday",
-  "type": "commonjs",
+  "type": "module",
   "scripts": {
     "start": " parcel index.html",
     "build": " parcel build index.html",
     "test": "jest"
   },
   "dependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^6.30.0"
   },
   "browserslist": [
     "last 2 versions"
   ],
   "devDependencies": {
     "@babel/preset-react": "^7.26.3",
-    "parcel": "^2.13.3"
+    "@parcel/transformer-js": "^2.14.4",
+    "parcel": "^2.14.4",
+    "process": "^0.11.10"
   }
 }
