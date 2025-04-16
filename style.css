@@ -76,6 +76,17 @@ color: #FF5606;
   padding: 16px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+.res-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
 
 .res-info h3 {
   font-size: 18px;
@@ -240,4 +251,128 @@ color: #FF5606;
   margin-top: 25px;
   margin-bottom:-10px
 }
-  
+
+.menu {
+  padding: 20px 80px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.rest-name{
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  padding-right: 80px;
+}
+.res-details {
+  background-color: #fff;
+  padding: 20px;
+  margin: 20px auto;        
+  max-width: 750px;          
+  width: 100%; 
+  border-radius: 20px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+  border: 1px solid #eee;
+}
+.res-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.green-star {
+  color: #339f5e;
+  font-size: 16px;
+  margin-right: 4px;
+}
+.cuisines {
+  color: #FF5606;
+  font-size:medium;
+  font-weight: bold;
+  margin: 8px 0;
+}
+.outlet-details {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  margin-top: 10px;
+  font-weight: bold;
+}
+.bold{
+  margin-left: 15px;
+  font-weight: normal;
+  font-size: 16px;
+}
+.time{
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 10px;
+}
+.dish-list {
+  max-width: 790px;
+  margin: 0 auto;
+  padding: 0;
+}
+.menu-list{
+  padding-left: 285px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+.dish-item {
+  margin-bottom: 30px;
+}
+
+.dish-content {
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+  font-size: medium;
+}
+.dish-info {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  gap: 5px;
+}
+.dish-description {
+  max-width: 500px;
+  font-weight: normal;
+}
+.dish-image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 150px;
+  margin-top: -20px;
+}
+
+.dish-image {
+  width: 160px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.add-button {
+  margin-top: -15px;
+  padding: 6px 25px;
+  background-color: white;
+  color: #339f5e;
+  border: 1px solid grey;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: medium;
+}
+.dish-divider {
+  border: none;
+  border-bottom: 2px solid #ddd;
+  margin-top: 20px;
+}
+.more{
+  color: rgb(108, 108, 108);
+}

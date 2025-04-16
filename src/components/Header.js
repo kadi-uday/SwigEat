@@ -16,13 +16,13 @@ const SwigEatlogo = new URL("../utils/SwigEat.png", import.meta.url).href;
          <div className="nav-container">
                <ul id="list-container">
                   <li>
-                   <Link to="/" >Home</Link>
+                   <Link className="res-card-link" to="/" >Home</Link>
                   </li>
                   <li>
-                     <Link to="/about">About Us</Link>
+                     <Link className="res-card-link " to="/about">About Us</Link>
                   </li>
                   <li>
-                     <Link to="/contact">Contact Us</Link>
+                     <Link className="res-card-link " to="/contact">Contact Us</Link>
                   </li>
                   <li>Cart</li>
                   <button className="login" onClick={() => {
