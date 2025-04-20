@@ -376,3 +376,9 @@ a {
 .more{
   color: rgb(108, 108, 108);
 }
+.user-card{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+  padding: 3px;
+  border: 1px solid black;
+  margin: 10px;
+}
