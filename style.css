@@ -16,6 +16,11 @@ border: 1px solid black;
     padding: 16px 21px;
 
 }
+li.online:hover {
+  text-decoration: none !important;
+  color: black !important;
+  cursor: default !important;
+}
 .nav-container >ul{
     display: flex;
     list-style-type: none;

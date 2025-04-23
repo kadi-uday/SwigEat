@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Header = () => {
 
 const [btnName , setBtnName] = useState("Login");
 const SwigEatlogo = new URL("../utils/SwigEat.png", import.meta.url).href;
-
+const onlineStatus = useOnlineStatus();
 
    return (
       
@@ -15,6 +16,9 @@ const SwigEatlogo = new URL("../utils/SwigEat.png", import.meta.url).href;
 
          <div className="nav-container">
                <ul id="list-container">
+                  <li className="online">
+                     Online Status: {onlineStatus? "🟢" : "🔴"}
+                  </li>
                   <li>
                    <Link className="res-card-link" to="/" >Home</Link>
                   </li>
