@@ -28,6 +28,9 @@ const onlineStatus = useOnlineStatus();
                   <li>
                      <Link className="res-card-link " to="/contact">Contact Us</Link>
                   </li>
+                  <li>
+                     <Link className="res-card-link " to="/grocery">Grocery</Link>
+                  </li>
                   <li>Cart</li>
                   <button className="login" onClick={() => {
                      btnName === "Login" ? setBtnName("Logout") : setBtnName("Login");

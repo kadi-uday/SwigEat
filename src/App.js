@@ -7,7 +7,15 @@ import Contact from "./components/Contact";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
 import { createBrowserRouter , RouterProvider, Outlet } from "react-router-dom";
+import { lazy , Suspense} from "react";
+// import Grocery from "./components/Grocery";
 
+/**
+ *  when ever user needs then only show or load the code ie js file. this is also called as 
+ *    Chunking, Code Splitting, Dynamic Bundling, Lazy Loading, Demand Loading.
+ */
+
+const Grocery = lazy( () => import("./components/Grocery")); // this is also called as Dynamic Importing.
 
 const AppLayout = () => {
    return (
@@ -34,6 +42,12 @@ const appRouter = createBrowserRouter( [
          {
             path: "/contact",
             element:<Contact />,
+         },
+         {
+            path: "/grocery",
+            element:(
+            <Suspense fallback= {<h1>Loading...</h1>}  ><Grocery /></Suspense>
+            ),
          },
          {
             path: "/restaurants/:resId",
