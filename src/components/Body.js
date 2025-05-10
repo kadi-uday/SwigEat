@@ -44,9 +44,9 @@ const Body = () => {
 
     return (
        <div className="body">
-         <div className="search-container">
-         <div className="button">
-               <button className="filtered-btn" onClick={ () => {
+         <div className="flex gap-4 items-center mt-2">
+         <div className=" m-4">
+               <button className="  w-48 h-10 ml-32 mt-30 my-[5px] mb-[20px] bg-[#fc8019] text-white font-bold px-[10px] py-[6px] rounded-[5px] cursor-pointer transition duration-200 ease-in-out hover:bg-[#fa6e00] active:scale-95 active:bg-[#e65100] font-['Segoe UI']" onClick={ () => {
                   const filteredRes = listOfRestaurants.filter(
                      (res) => res.info.avgRating > 4.5
                   )
@@ -56,32 +56,32 @@ const Body = () => {
                </button>
             </div>
 
-            <div className="search-bar">
-               <input type="text" placeholder="Enter restaurent name"
+            <div className=" flex gap-2 items-center m-4 ">
+               <input className="p-2 w-54 h-10 border mt-25 border-gray-400 rounded-md text-lg" type="text" placeholder="Enter restaurent name"
                value={searchQuery}
                onChange={(event) => {
                   setSearchQuery(event.target.value)
                }}></input>
-               <button onClick={handleSearch}>Search</button>
+               <button className=" flex w-24 mt-25 h-10 px-[22px] py-1.5 bg-blue-500 text-white rounded-md cursor-pointer text-lg hover:bg-blue-700" onClick={handleSearch}>Search</button>
             </div>
          </div>
          
-         <div className="mind-heading">
+         <div className="mind-heading font-['Segoe_UI'] pl-36 mt-6 text-2xl font-bold">
             <h2>What's on your mind?</h2>
          </div>
-         <div className="mind-container">
-            {mindData.slice(0,7).map((item) => (
+         <div className="mind-container flex flex-nowrap overflow-x-auto px-20 gap-4 mt-[-70px] ">
+            {mindData.slice(0,8).map((item) => (
                <WhatsOnYourMind key={item.id} itemData = {item} />
             ) )}
          </div>
-         <div className="res-heading">
-            <h2>Restaurants with online food delivery </h2>
+         <div className="res-heading  pl-35 mt-1">
+            <h2 className="font-['Segoe_UI'] font-bold text-2xl">Restaurants with online food delivery </h2>
          </div>
           
-          <div className="res-container">
+          <div className="res-container grid grid-cols-4 gap-7 p-5 px-36 bg-[#f9f9f9]">
              
             { filteredRestaurants.map((restaurant) => (
-              <Link className="res-card-link" key = {restaurant.info.id} to={"/restaurants/" + restaurant.info.id}> <RestaurantCard resData={restaurant} /> </Link> 
+              <Link className="res-card-link " key = {restaurant.info.id} to={"/restaurants/" + restaurant.info.id}> <RestaurantCard resData={restaurant} /> </Link> 
              )) }
 
           </div>

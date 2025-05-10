@@ -9,30 +9,37 @@ const SwigEatlogo = new URL("../utils/SwigEat.png", import.meta.url).href;
 const onlineStatus = useOnlineStatus();
 
    return (
-      
-      <div className="header">
+      <header className="fixed top-0 w-full bg-white z-50 shadow-md">
+      <div className="flex justify-between broder-black">
          
-         <img id="img-logo" src = {SwigEatlogo} alt="logo"></img> 
+         <img  className="w-[100px] h-[100px]" id="img-logo" src = {SwigEatlogo} alt="logo"></img> 
 
-         <div className="nav-container">
-               <ul id="list-container">
-                  <li className="online">
+         <div className="px-[21px] py-[16px]">
+               <ul className="flex gap-[7px] text-[20px] font-bold font-['Segoe UI'] list-none">  
+
+                  <li className="p-2 m-2.5">
                      Online Status: {onlineStatus? "🟢" : "🔴"}
                   </li>
-                  <li>
+
+                  <li className="p-2 m-2.5 hover:text-[#FF5606] hover:cursor-pointer">
                    <Link className="res-card-link" to="/" >Home</Link>
                   </li>
-                  <li>
+
+                  <li className="p-2 m-2.5 hover:text-[#FF5606] hover:cursor-pointer">
                      <Link className="res-card-link " to="/about">About Us</Link>
                   </li>
-                  <li>
+
+                  <li className="p-2 m-2.5 hover:text-[#FF5606] hover:cursor-pointer">
                      <Link className="res-card-link " to="/contact">Contact Us</Link>
                   </li>
-                  <li>
+
+                  <li className="p-2 m-2.5 hover:text-[#FF5606] hover:cursor-pointer">
                      <Link className="res-card-link " to="/grocery">Grocery</Link>
                   </li>
-                  <li>Cart</li>
-                  <button className="login" onClick={() => {
+
+                  <li className="p-2 m-2.5 hover:text-[#FF5606] hover:cursor-pointer">Cart</li>
+                  
+                  <button className="w-20 h-11 mt-[10px] text-[18px] font-extrabold pb-[3px] cursor-pointer bg-black text-white rounded-[5px] border-none font-sans" onClick={() => {
                      btnName === "Login" ? setBtnName("Logout") : setBtnName("Login");
                   }}>
                      {btnName}
@@ -41,6 +48,7 @@ const onlineStatus = useOnlineStatus();
          </div> 
 
       </div>
+      </header>
    )
 }
 
