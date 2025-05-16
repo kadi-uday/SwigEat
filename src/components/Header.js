@@ -10,7 +10,7 @@ const onlineStatus = useOnlineStatus();
 
    return (
       <header className="fixed top-0 w-full bg-white z-50 shadow-md">
-      <div className="flex justify-between broder-black">
+      <div className="flex justify-between items-center px-4 py-2">
          
          <img  className="w-[100px] h-[100px]" id="img-logo" src = {SwigEatlogo} alt="logo"></img> 
 
