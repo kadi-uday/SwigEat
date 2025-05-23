@@ -1,9 +1,10 @@
 import RestaurantCard from "./RestaurantCard";
-import { useState , useEffect } from "react";
+import { useState , useEffect, useContext } from "react";
 import Shimmer from "./Shimmer";
 import WhatsOnYourMind from "./WhatsOnYourMind";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const Body = () => {
 
@@ -11,6 +12,7 @@ const Body = () => {
    const [filteredRestaurants , setFilteredRestaurants] = useState([]);
    const [searchQuery, setSearchQuery] = useState("");
    const [mindData , setMindData] = useState([]);
+   const {loggedInUser, setUserName} = useContext(UserContext);
 
    function handleSearch() {
      const filteredRes = listOfRestaurants.filter((res) =>
@@ -45,9 +47,9 @@ const Body = () => {
 
     return (
        <div className="body">
-         <div className="flex gap-4 items-center mt-2">
+         <div className="flex gap-4 items-center mt-10">
          <div className=" m-4">
-               <button className="  w-48 h-10 ml-32 mt-30 my-[5px] mb-[20px] bg-[#fc8019] text-white font-bold px-[10px] py-[6px] rounded-[5px] cursor-pointer transition duration-200 ease-in-out hover:bg-[#fa6e00] active:scale-95 active:bg-[#e65100] font-['Segoe UI']" onClick={ () => {
+               <button className="  w-48 h-10 ml-32 mt-32 my-[5px] mb-[20px] bg-[#fc8019] text-white font-bold px-[10px] py-[6px] rounded-[5px] cursor-pointer transition duration-200 ease-in-out hover:bg-[#fa6e00] active:scale-95 active:bg-[#e65100] font-['Segoe UI']" onClick={ () => {
                   const filteredRes = listOfRestaurants.filter(
                      (res) => res.info.avgRating > 4.5
                   )
@@ -58,25 +60,30 @@ const Body = () => {
             </div>
 
             <div className=" flex gap-2 items-center m-4 ">
-               <input className="p-2 w-54 h-10 border mt-25 border-gray-400 rounded-md text-lg" type="text" placeholder="Enter restaurent name"
+               <input data-testid="searchInput" className="p-2 w-54 h-10 border mt-28 border-gray-400 rounded-md text-lg" type="text" placeholder="Enter restaurent name"
                value={searchQuery}
                onChange={(event) => {
                   setSearchQuery(event.target.value)
                }}></input>
-               <button className=" flex w-24 mt-25 h-10 px-[22px] py-1.5 bg-blue-500 text-white rounded-md cursor-pointer text-lg hover:bg-blue-700" onClick={handleSearch}>Search</button>
+               <button className=" flex w-24 mt-28  h-10 px-[22px] py-1.5 bg-blue-500 text-white rounded-md cursor-pointer text-lg hover:bg-blue-700" onClick={handleSearch}>Search</button>
+            </div>
+            <div className=" flex gap-2 items-center m-4 ">
+               <label className="mt-28 font-bold text-lg">User Name: </label>
+               <input className="p-2 w-54 h-10 border mt-28 border-gray-400 rounded-md text-lg" type="text" placeholder="Enter name" value={loggedInUser} onChange={(e) => setUserName(e.target.value)} />
             </div>
          </div>
          
-         <div className="mind-heading font-['Segoe_UI'] pl-36 mt-6 text-2xl font-bold">
+         
+         <div className="mind-heading absolute font-['Segoe_UI'] pl-36 mt-6 text-2xl font-bold">
             <h2>What's on your mind?</h2>
          </div>
-         <div className="mind-container flex flex-nowrap overflow-x-auto px-20 gap-4 mt-[-70px] ">
+         <div className="mind-container flex flex-nowrap overflow-x-auto px-10 pl-20 mt-[-50px] ">
             {mindData.slice(0,8).map((item) => (
                <WhatsOnYourMind key={item.id} itemData = {item} />
             ) )}
          </div>
          <div className="res-heading  pl-35 mt-1">
-            <h2 className="font-['Segoe_UI'] font-bold text-2xl">Restaurants with online food delivery </h2>
+            <h2 className="font-['Segoe_UI'] font-bold ml-36 text-2xl">Restaurants with online food delivery </h2>
          </div>
           
           <div className="res-container grid grid-cols-4 gap-7 p-5 px-36 bg-[#f9f9f9]">
