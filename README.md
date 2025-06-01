@@ -32,17 +32,26 @@ SwigEat is my first full-fledged React project, inspired by Swiggy. It helped me
 - Wrote unit tests and integration tests for component-level validation.
 - Debugged rendering issues and optimized component re-renders.
 
-## 🔧 Installation
+## 💻 Installation
 
-1. Clone the repository:
-   git clone https://github.com/kadi-uday/SwigEat.git
-   cd SwigEat
+### 1. Clone the repository:
 
-2. Install dependencies:
-   npm install
+```bash
+git clone https://github.com/kadi-uday/SwigEat.git
+cd SwigEat
+```
 
-3. Start the development server:
-   npm start
+### 2. Install dependencies:
+
+```bash
+npm install
+```
+
+### 3. Run the development server:
+
+```bash
+npm run start
+```
 
 ## 📸 Screenshots
 
