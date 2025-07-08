@@ -1,9 +1,27 @@
 const Shimmer = () => {
-    return  <div className="p-1.5 pl-7 pb-2.5 grid grid-cols-4 gap-x-7.5 gap-y-10 mt-[110px]">
-            {Array.from({ length: 12 }, (_, index) => (
-                <div key={index} className="shimmer-card w-[250px] h-[300px] bg-gradient-to-r from-gray-300 via-gray-200 to-gray-300 bg-[length:200%_100%] animate-shimmer rounded-lg">cards</div>
-            ))}
+  return (
+    <div className="p-4 pt-[110px] grid grid-cols-1 lg:mt-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-7">
+      {Array.from({ length: 12 }, (_, index) => (
+        <div
+          key={index}
+          className="w-full p-4 border-[2px] rounded-xl shadow-lg bg-white animate-pulse"
+        >
+          {/* Image placeholder */}
+          <div className="h-36 bg-gray-300 rounded-md mb-4"></div>
+
+          {/* Title placeholder */}
+          <div className="h-4 bg-gray-300 rounded w-3/4 mb-3"></div>
+
+          {/* Description lines */}
+          <div className="h-3 bg-gray-300 rounded w-full mb-2"></div>
+          <div className="h-3 bg-gray-300 rounded w-5/6 mb-2"></div>
+
+          {/* Price / rating box */}
+          <div className="h-4 bg-gray-300 rounded w-1/3"></div>
         </div>
-}
+      ))}
+    </div>
+  );
+};
 
 export default Shimmer;

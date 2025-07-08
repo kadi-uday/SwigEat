@@ -36,9 +36,11 @@ const AppLayout = () => {
    return (
       <Provider store = {appStore}>
          <UserContext.Provider value={{loggedInUser: userName, setUserName}}>
-            <div id="app">
-               <Header/>
-               < Outlet />
+            <div className="min-h-screen overflow-auto bg-white">
+               <div id="app">
+                  <Header/>
+                  < Outlet />
+               </div>
             </div>
          </UserContext.Provider>
       </Provider>

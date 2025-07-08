@@ -10,24 +10,40 @@ const ItemsList = ({items}) => {
     }
 
     return (
-        <div  className="dish-list max-w-[850px] my-0 mx-auto p-0">
-                {items.map((item) => (
-                    <div data-testid="foodItems" key={item?.card?.info?.id} className="dish-item mb-[30px]">
-                        <div className="dish-content font-bold flex justify-between items-start gap-[30px] text-[18px]">
-                            <div className="dish-info flex flex-col max-w-[500px] gap-[5px] "> 
-                                <p className="dish-name mt-4">{item.card.info.name} </p>
-                                <p className="dish-price ">₹{item.card.info.defaultPrice / 100 || item.card.info.price / 100}</p>
-                                <p className="dish-description max-w-[500px] font-normal ">{ item.card.info.description? item.card.info.description.split(" ").slice(0,20).join(" ") : "No Description Available"} <span className="more text-[#434040]">...more</span> </p> 
-                            </div>
-                            <div className="dish-image-container flex flex-col items-center min-w-[150px] ">
-                                <img src={`${CDN_URL}${item.card.info.imageId}`} alt={item.card.info.name} className="dish-image w-40 h-40 rounded-[8px] mb-2 mt-2"/>
-                                <button className="add-button  py-1.5 px-[25px] bg-white text-[#339f5e] border-[1px] border-[grey] rounded-[6px] font-bold cursor-pointer text-[18px]" onClick={() => handleAddItem(item)} >ADD</button>
-                            </div>
-                        </div>
-                        <hr className="dish-divider border-b-2 border-gray-300 mt-5"></hr>
-                    </div>
-                ))}
-            </div>
+<div className="dish-list w-full max-w-5xl mx-auto px-4 ml-3 md:ml-6 lg:ml-36">
+  {items.map((item) => (
+    <div key={item?.card?.info?.id} className="mb-8 border-b pb-6">
+      <div className="flex flex-row justify-between gap-4">
+
+        <div className="w-full sm:w-2/3">
+          <p className="text-sm md:text-lg font-bold lg:text-xl">{item.card.info.name}</p>
+          <p className="text-sm md:text-lg font-semibold lg:text-lg">
+            ₹{item.card.info.defaultPrice / 100 || item.card.info.price / 100}
+          </p>
+          <p className="text-xs md:text-sm lg:text-lg text-gray-700 break-words ">
+            { item.card.info.description? item.card.info.description.split(" ").slice(0,20).join(" ") : "No Description Available"}
+            <span className="text-gray-600">...more</span>
+          </p>
+        </div>
+
+        <div className="w-full sm:w-1/3 flex flex-col items-center">
+          <img
+            src={`${CDN_URL}${item.card.info.imageId}`}
+            alt={item.card.info.name}
+            className="w-28 h-28 sm:w-32 sm:h-32 object-cover rounded-md mb-2"
+          />
+          <button
+            onClick={() => handleAddItem(item)}
+            className="px-5 py-1.5 border border-gray-400 rounded-md text-[#339f5e] font-bold text-sm hover:bg-gray-50"
+          >
+            ADD
+          </button>
+        </div>
+      </div>
+    </div>
+  ))}
+</div>
+
     )
 }
 

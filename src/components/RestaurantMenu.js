@@ -15,28 +15,50 @@ const { name , cuisines , costForTwoMessage , areaName, avgRatingString, totalRa
 const categories = resInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter((c) => c.card?.card?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory");
 
     return (
-        <div className="menu m-25 mx-20  p-5 px-20 font-['Segoe UI']">
-            <h2 className="rest-name max-w-[66.66%] mx-auto text-3xl font-bold mt-32 mb-2.5 pr-20 text-center">{name}</h2>
-            <div className="res-details bg-white p-5 my-5 mx-auto max-w-[75%] w-full rounded-[20px] shadow-xl border-[3px] border-[#eee] ">
-    <           div className="res-meta flex items-center gap-2.5 font-bold text-[18px] mb-2.5">
-                    <span className="rating"><span className="green-star text-[#339f5e] text-[18px] my-2 mx-0">★</span> {avgRatingString} ({totalRatingsString})</span>
-                    <span>•</span>
-                    <span className="cost">{costForTwoMessage}</span>
-                </div>
+     <div className="menu  px-4 py-4 sm:px-6 md:px-10 lg:mx-20 lg:p-5 lg:px-20 font-['Segoe UI']">
+      <h2 className="rest-name text-xl sm:text-2xl md:text-3xl font-bold text-center mt-28 mb-4 sm:mb-5 max-w-full sm:max-w-[80%] md:max-w-[70%] lg:max-w-[66.66%] mx-auto">
+        {name}
+      </h2>
 
-                    <p className="cuisines text-[#FF5606] text-base text-[18px] font-bold my-2 mx-0">{cuisines.join(", ")}</p>
+      <div className="res-details bg-white p-4 sm:p-6 md:p-8 my-4 sm:my-5 mx-auto w-full rounded-2xl shadow-xl border-[2px] border-[#eee] max-w-full sm:max-w-[90%] md:max-w-[85%] lg:max-w-[75%]">
 
-                    <div className="outlet-details flex items-center text-[18px] mt-2.5 font-bold">
-                        <p className="area">Outlet <span className="bold ml-[15px] font-normal text-[18px]">{areaName}</span></p>
-                    </div>
-                    <p className="time font-bold text-[18px] mt-2.5">{sla.minDeliveryTime}-{sla.maxDeliveryTime} mins</p>
-                </div>
-                <div>
-                    {categories.map((category, index) => (
-                        <RestaurantCategory key={category.card.card.title} data = {category?.card?.card} showItems= {index === showIndex?true : false} setShowIndex = {() => setShowIndex(index === showIndex ? null : index)} />
-                    ))}
-                </div>
+        <div className="res-meta flex flex-wrap gap-2 items-center text-sm sm:text-base md:text-lg font-bold mb-2">
+          <span className="rating">
+            <span className="green-star text-[#339f5e]">★</span> {avgRatingString} ({totalRatingsString})
+          </span>
+          <span>•</span>
+          <span className="cost">{costForTwoMessage}</span>
         </div>
+
+        <p className="cuisines text-[#FF5606] text-sm sm:text-base md:text-lg font-bold my-2">
+          {cuisines.join(", ")}
+        </p>
+
+        <div className="outlet-details flex flex-col sm:flex-row sm:items-center text-sm sm:text-base md:text-lg font-bold mt-2 gap-1 sm:gap-4">
+          <p className="area">
+            Outlet:{" "}
+            <span className="ml-1 sm:ml-2 font-normal">{areaName}</span>
+          </p>
+        </div>
+
+        <p className="time font-bold text-sm sm:text-base md:text-lg mt-2">
+          {sla.minDeliveryTime}-{sla.maxDeliveryTime} mins
+        </p>
+      </div>
+
+      <div className="mt-6 sm:mt-8 md:mt-10 lg:mt-12">
+        {categories.map((category, index) => (
+          <RestaurantCategory
+            key={category.card.card.title}
+            data={category.card.card}
+            showItems={index === showIndex}
+            setShowIndex={() =>
+              setShowIndex(index === showIndex ? null : index)
+            }
+          />
+        ))}
+      </div>
+    </div>
        
     )
 }

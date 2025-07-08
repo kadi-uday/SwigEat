@@ -8,14 +8,13 @@ const RestaurantCategory = ({data ,showItems, setShowIndex}) => {
 
     return (
         <div className="mt-5">
-            {/* Header */}
-            <div onClick={handleClick} className="w-9/12 mx-auto my-6 bg-gray-100 shadow-lg p-4 rounded-lg cursor-pointer">
+            <div onClick={handleClick} className="w-full md:w-10/12 lg:w-9/12 mx-auto my-6 bg-gray-100 shadow-lg p-4 rounded-lg cursor-pointer">
                 <div  className="flex justify-between">
-                    <span className="font-bold text-xl">{data.title} ({data.itemCards.length})</span>
-                    <span className="font-bold text-lg">∨</span>
+                    <span className="font-bold text-base md:text-lg lg:text-xl">{data.title} ({data.itemCards.length})</span>
+                    <span className="font-bold text-base md:text-lg lg:text-xl">∨</span>
                 </div>  
             </div>
-            {/* Accordion Body */}
+
             {showItems && <ItemsList items = {data.itemCards}/>}
         </div>
     )
